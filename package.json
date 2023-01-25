@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1"
+  },
+  "name": "recd-recs-tracker-server",
+  "description": "**New Year? New Music!**",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddie-hernandez/recd-recs-tracker-server.git"
+  },
+  "author": "Eddie Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddie-hernandez/recd-recs-tracker-server/issues"
+  },
+  "homepage": "https://github.com/eddie-hernandez/recd-recs-tracker-server#readme"
+}
