@@ -2,16 +2,28 @@
 
 **New Year? New Music!**
 
-I must say, there's few things in this world I love recommending as much as I love recommending a good ol' classic album I fancy. Incredibly so, there are good souls in my circle who repay the favor and share albums they think I should listen to! But the fact of the matter is, I have such a hard time keeping track of what I have and haven't listened to already. That's why I created Rec'd Recs – a tracker that allows you to add, see, edit, and delete any album anyone has recommended to you! Last year, I personally actually used a google spreadsheet to track all of this information down, but this time around, we're goin' full-stack! Users can make an account, see their list of recommended albums, and even add their own liner notes once they're finished listening to a record!
+I must say, there's few things in this world I love recommending as much as I love recommending a good ol' classic album I fancy. Incredibly so, there are good souls in my circle who repay the favor and share albums they think I should listen to! But the fact of the matter is, I have such a hard time keeping track of what I have and haven't listened to already. 
+
+That's why I created Rec'd Recs – a tracker that allows you to add, see, edit, and delete any album anyone has recommended to you! Last year, I personally actually used a google spreadsheet to track all of this information down, but this time around, we're goin' full-stack! 
+
+Users can make an account, see their list of recommended albums, and even add their own liner notes once they're finished listening to a record!
 Within the liner notes, users will be able to rate an album, add a track that stood out to them the most, as well as jot any notes down about the album that they feel necessary. Welcome to Rec'd Recs!
 
 ## Wireframes
 
+**Sign-Up Page**
+
 ![Sign-Up Page](/images/Sign-Up%20Page.png)
+
+**Login Page**
 
 ![Login Page](/images/Login%20Page.png)
 
+**Index/Show Albums**
+
 ![Index/Show Albums](/images/Show.png)
+
+**Index/Show Albums (Adding Album/Added Liner Notes)**
 
 ![Index/Show Albums (Adding Album/Added Liner Notes)](/images/Show%202.png)
 
