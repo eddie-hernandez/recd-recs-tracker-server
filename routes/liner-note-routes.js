@@ -7,7 +7,7 @@ const { requireToken } = require('../config/auth')
 
 // CREATE
 // POST /liner-notes
-router.post('/liner-notes', requireToken, (req, res, next) => {
+router.post('/', requireToken, (req, res, next) => {
     const recordId = req.body.linerNote.recordId
 
     console.log(req.user)
@@ -34,9 +34,52 @@ router.post('/liner-notes', requireToken, (req, res, next) => {
         .catch(next)
 })
 
+
+
+router.route('/:id')
 // UPDATE
 // PATCH /liner-notes/:liner-noteId
-router.patch('/liner-notes/:liner-noteId', (req, res, next) => {
+.patch((req, res, next) => {
+    const recordId = req.body.linerNote.recordId
+
+    const linerNoteBody = req.body.linerNote
+
+    Record.findById(recordId)
+        .then(handle404)
+        .then(record => {
+            const linerNote = record.linerNotes.id(req.params.linerNoteId)
+
+            linerNote.set(linerNoteBody)
+
+            return record.save()
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
+// DELETE
+// DELETE /liner-notes/:liner-noteId
+.delete((req, res, next) => {
+    const recordId = req.body.linerNote.recordId
+
+    Record.findById(recordId)
+        .then(handle404)
+        .then(record => {
+
+            record.linerNotes.id(req.params.linerNoteId).remove()
+
+            return record.save()
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
+
+
+
+/*
+
+// UPDATE
+// PATCH /liner-notes/:liner-noteId
+router.patch('/:id', (req, res, next) => {
     const recordId = req.body.linerNote.recordId
 
     const linerNoteBody = req.body.linerNote
@@ -56,7 +99,7 @@ router.patch('/liner-notes/:liner-noteId', (req, res, next) => {
 
 // DELETE
 // DELETE /liner-notes/:liner-noteId
-router.delete('/liner-notes/:liner-noteId', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
     const recordId = req.body.linerNote.recordId
 
     Record.findById(recordId)
@@ -70,5 +113,7 @@ router.delete('/liner-notes/:liner-noteId', (req, res, next) => {
         .then(() => res.sendStatus(204))
         .catch(next)
 })
+
+*/
 
 module.exports = router
