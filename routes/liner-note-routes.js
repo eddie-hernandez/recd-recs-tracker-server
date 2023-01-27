@@ -15,7 +15,7 @@ router.post('/', (req, res, next) => {
     
     const linerNote = req.body.linerNote
     // adding an owner
-    linerNote.owner = req.user._id
+    // linerNote.owner = req.user._id
 
     // find the Record that I want to add the note too
     // once found `push` the note into the Mongoose Array
