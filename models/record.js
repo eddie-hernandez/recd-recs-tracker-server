@@ -19,7 +19,7 @@ const recordSchema = new Schema(
             min: 1,
             max: 2023
         },
-        Comments: {
+        comments: {
             type: String,
             required: false,
         },
