@@ -18,14 +18,10 @@ const linerNoteSchema = new Schema(
 			type: String,
 			required: false,
 		},
-		edited: {
-			type: Date,
-			required: false,
-		},
-        // owner: {
-        //     type: mongoose.Schema.Types.ObjectId,
-        //     ref: 'User'
-        // }
+		owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
 	},
 	{
 		timestamps: true,
