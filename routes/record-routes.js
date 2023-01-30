@@ -9,6 +9,10 @@ const router = express.Router()
 router.route('/')
 // CREATE RECORD
 .post(requireToken, (req, res, next) => {
+    const record = req.body.record
+    record.owner = req.user._id
+
+
     Record.create(req.body.record)
 
         .then((record) => {
@@ -20,7 +24,11 @@ router.route('/')
 // .get(requireToken, (req, res, next) => {
 // INDEX RECORDS
 .get(requireToken, (req, res, next) => {
-    Record.find()
+    Record.find(
+        {
+        'owner': req.user._id
+    }
+    )
 
         .then(records => {
             return records.map(record => record)

@@ -23,7 +23,11 @@ const recordSchema = new Schema(
             type: String,
             required: false,
         },
-        linerNotes: [linerNoteSchema]
+        linerNotes: [linerNoteSchema],
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
     }, 
     {
         timestamps: true
