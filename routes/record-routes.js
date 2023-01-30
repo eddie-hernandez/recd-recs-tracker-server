@@ -1,5 +1,5 @@
 const express = require('express')
-// const { requireToken } = require('../config/auth')
+const { requireToken } = require('../config/auth')
 const { handle404 } = require('../lib/custom-errors')
 
 const Record = require('../models/record')
@@ -8,7 +8,7 @@ const router = express.Router()
 
 router.route('/')
 // CREATE RECORD
-.post((req, res, next) => {
+.post(requireToken, (req, res, next) => {
     Record.create(req.body.record)
 
         .then((record) => {
@@ -19,7 +19,7 @@ router.route('/')
 // INCLUDE WHEN USER SIGN IN IS READY
 // .get(requireToken, (req, res, next) => {
 // INDEX RECORDS
-.get((req, res, next) => {
+.get(requireToken, (req, res, next) => {
     Record.find()
 
         .then(records => {
@@ -34,7 +34,7 @@ router.route('/')
 
 router.route('/:id')
 // SHOW RECORD BY ID
-.get((req, res, next) => {
+.get(requireToken, (req, res, next) => {
     Record.findById(req.params.id)
         .then(record => {
             res.status(200).json({ record: record })
@@ -42,7 +42,7 @@ router.route('/:id')
         .catch(next)
 })
 // UPDATE RECORD BY ID
-.patch((req, res, next) => {
+.patch(requireToken, (req, res, next) => {
     Record.findById(req.params.id)
         .then(handle404)
         .then(record => {
@@ -52,7 +52,7 @@ router.route('/:id')
         .catch(next)
 })
 // DELETE RECORD BY ID
-.delete((req, res, next) => {
+.delete(requireToken, (req, res, next) => {
     Record.findById(req.params.id)
         .then(handle404)
         .then(record => {

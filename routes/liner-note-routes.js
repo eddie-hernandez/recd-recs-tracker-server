@@ -1,6 +1,6 @@
 const express = require('express')
 const { handle404 } = require('../lib/custom-errors')
-// const { requireToken } = require('../config/auth')
+const { requireToken } = require('../config/auth')
 const router = express.Router()
 
 const Record = require('../models/record')
@@ -12,7 +12,7 @@ const Record = require('../models/record')
 router.route('/')
 // CREATE
 // POST /liner-notes
-.post((req, res, next) => {
+.post(requireToken, (req, res, next) => {
     const recordId = req.body.linerNote.recordId
 
     // console.log(req.user)
@@ -43,7 +43,7 @@ router.route('/:id')
 
 // UPDATE
 // PATCH /linerNotes/:id
-.patch((req, res, next) => {
+.patch(requireToken, (req, res, next) => {
     const recordId = req.body.linerNote.recordId
 
     const linerNoteBody = req.body.linerNote
@@ -67,7 +67,7 @@ router.route('/:id')
 
 // DELETE
 // DELETE /linerNotes/:id
-.delete((req, res, next) => {
+.delete(requireToken, (req, res, next) => {
     const recordId = req.body.linerNote.recordId
 
     Record.findById(recordId)
