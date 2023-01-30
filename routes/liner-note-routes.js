@@ -7,7 +7,7 @@ const Record = require('../models/record')
 
 // INCLUDE WHEN USER SIGN IN IS READY:
 // router.post('/', requireToken, (req, res, next) => {
-
+//
 
 router.route('/')
 // CREATE
