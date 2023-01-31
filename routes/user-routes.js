@@ -5,19 +5,6 @@ const { createUserToken } = require('../config/auth')
 
 const router = express.Router()
 
-// // INDEX /users
-// router.get('/users', (req, res, next) => {
-//     User.find()
-
-//         .then(users => {
-//             return users.map(user => user)
-//         })
-//         .then(users => {
-//             res.status(200).json({ users: users })
-//         })
-//     .catch(next)
-// })
-
 // POST /sign-up
 router.post('/sign-up', (req, res, next) => {
     bcrypt

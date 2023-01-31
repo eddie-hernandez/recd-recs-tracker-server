@@ -7,6 +7,7 @@ const Record = require('../models/record')
 const router = express.Router()
 
 router.route('/')
+
 // CREATE RECORD
 .post(requireToken, (req, res, next) => {
     const record = req.body.record
@@ -20,15 +21,12 @@ router.route('/')
         })
     .catch(next)
 })
-// INCLUDE WHEN USER SIGN IN IS READY
-// .get(requireToken, (req, res, next) => {
+
 // INDEX RECORDS
 .get(requireToken, (req, res, next) => {
-    Record.find(
-        {
+    Record.find({
         'owner': req.user._id
-    }
-    )
+    })
 
         .then(records => {
             return records.map(record => record)
@@ -39,8 +37,8 @@ router.route('/')
     .catch(next)
 })
 
-
 router.route('/:id')
+
 // SHOW RECORD BY ID
 .get(requireToken, (req, res, next) => {
     Record.findById(req.params.id)
@@ -49,6 +47,7 @@ router.route('/:id')
         })
         .catch(next)
 })
+
 // UPDATE RECORD BY ID
 .patch(requireToken, (req, res, next) => {
     Record.findById(req.params.id)
@@ -59,6 +58,7 @@ router.route('/:id')
         .then(() => res.sendStatus(204))
         .catch(next)
 })
+
 // DELETE RECORD BY ID
 .delete(requireToken, (req, res, next) => {
     Record.findById(req.params.id)
