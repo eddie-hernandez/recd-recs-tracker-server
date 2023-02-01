@@ -2,6 +2,7 @@ const mongoose = require ('mongoose')
 
 const Schema = mongoose.Schema
 
+// liner note schema
 const linerNoteSchema = new Schema(
 	{
 		rating: {
