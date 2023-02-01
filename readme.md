@@ -35,11 +35,8 @@ The following technology was used in order to create this application:
 |  Create   |  /records               |   POST        | Creates a new record                    |
 |  Update   |  /records/:id           |   PATCH       | Updates a specific record (by record id)|
 |  Delete   |  /records/:id           |   DELETE      | Deletes a specific record (by record id)|
-|  Create   |  /liner-notes           |   POST        | Create a liner note attached to a       |
-|           |                         |               | specific record                         |
-|  Update   |  /liner-notes/:id       |   PATCH       | Updates a liner note attached to a      | 
-|           |                         |               | specific record (by sub-doc/record id)  |
+|  Create   |  /liner-notes           |   POST        | Create a liner note attached to a specific record                         |
+|  Update   |  /liner-notes/:id       |   PATCH       | Updates a liner note attached to a specific record (by sub-doc/record id)  |
 |  Delete   |  /liner-notes/:id       |   DELETE      | Deletes a liner note (by sub-doc id)    |
 |  Create   |  /sign-up               |   POST        | Creates a new user                      |
-|  Create   |  /sign-in               |   POST        | Creates/bcrypts user token, grants user |
-|           |                         |               | access to all SPA contents/containers   |
+|  Create   |  /sign-in               |   POST        | Creates/bcrypts user token, grants user access to all SPA contents/containers |
