@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const db = require('./config/db')
-const PORT = 7777
+const PORT = process.env.PORT || 7777
 
 const requestLogger = require('./lib/request-logger')
 const recordRoutes = require('./routes/record-routes')
