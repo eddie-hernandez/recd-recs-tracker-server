@@ -3,23 +3,23 @@ const { requireToken } = require('../config/auth')
 const { handle404 } = require('../lib/custom-errors')
 
 const Record = require('../models/record')
-
+    // be mindful of inconsistent whitespace
 const router = express.Router()
 
 router.route('/')
 
 // CREATE RECORD
 .post(requireToken, (req, res, next) => {
-    const record = req.body.record
-    record.owner = req.user._id
+	const record = req.body.record
+	record.owner = req.user._id
+	// be mindful of inconsistent whitespace
 
-
-    Record.create(req.body.record)
-
-        .then((record) => {
-            res.status(201).json({ record: record })
-        })
-    .catch(next)
+	Record.create(req.body.record)
+		// be mindful of inconsistent whitespace
+		.then((record) => {
+			res.status(201).json({ record: record })
+		})
+		.catch(next)
 })
 
 // INDEX RECORDS
@@ -27,7 +27,8 @@ router.route('/')
     Record.find({
         'owner': req.user._id
     })
-
+    // be mindful of inconsistent whitespace
+    
         .then(records => {
             return records.map(record => record)
         })
