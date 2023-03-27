@@ -1,4 +1,4 @@
-const mongooseBaseName = 'recd-recs-app'
+const mongooseBaseName = 'noted'
 
 const database = {
 	development: `mongodb://localhost/${mongooseBaseName}-development`,
