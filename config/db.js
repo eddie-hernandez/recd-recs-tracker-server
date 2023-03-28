@@ -5,7 +5,7 @@ const database = {
 	test: `mongodb://localhost/${mongooseBaseName}-test`,
 }
 
-const localDb = process.env.TESTENV ? database.test : database.development
+const localDb = process.env.DATABASE_URL ? database.test : database.development
 
 const currentDb = process.env.DB_URI || localDb
 

@@ -9,7 +9,7 @@ const recordRoutes = require('./routes/record-routes')
 const linerNoteRoutes = require('./routes/liner-note-routes')
 const userRoutes = require('./routes/user-routes')
 
-mongoose.set('strictQuery', true)
+mongoose.set('strictQuery', false)
 
 mongoose.connect(db, {
 	useNewUrlParser: true,
