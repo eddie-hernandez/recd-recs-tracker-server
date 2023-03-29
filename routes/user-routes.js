@@ -11,6 +11,7 @@ router.post('/sign-up', (req, res, next) => {
         .hash(req.body.credentials.password, 10)
         .then(hashedPassword => {
             return {
+                username: req.body.credentials.username,
                 email: req.body.credentials.email,
                 password: hashedPassword
             }

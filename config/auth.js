@@ -7,9 +7,7 @@ const secret = process.env.JWT_SECRET || 'some string value only your app knows'
 const { Strategy, ExtractJwt } = require('passport-jwt')
 
 const opts = {
-
 	jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-
 	secretOrKey: secret,
 }
 
@@ -18,9 +16,7 @@ const User = require('../models/user')
 const strategy = new Strategy(opts, function (jwt_payload, done) {
 
 	User.findById(jwt_payload.id)
-
 		.then((user) => done(null, user))
-
 		.catch((err) => done(err))
 })
 
