@@ -38,7 +38,7 @@ const createUserToken = (req, user) => {
 		err.statusCode = 422
 		throw err
 	}
-	return jwt.sign({ id: user._id }, secret, { expiresIn: 3600 })
+	return jwt.sign({ id: user._id, username: user.username }, secret, { expiresIn: 3600 })
 }
 
 module.exports = {
